@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* === LIGHT THEME – Mealplan === */
+  /* Base */
+  --background: #F7F4EF;           /* soft cream background */
+  --foreground: #3A342E;           /* main text */
+
+  /* Surfaces */
+  --card: #FAF8F4;
+  --card-foreground: #3A342E;
+  --popover: #FAF8F4;
+  --popover-foreground: #3A342E;
+
+  /* Brand */
+  --primary: #2C7A41;              /* green button / selected chip */
+  --primary-foreground: #FDFBF7;   /* almost white */
+
+  /* Secondary / muted surfaces (chips, input bg) */
+  --secondary: #E5E3DF;
+  --secondary-foreground: #3A342E;
+
+  --muted: #F0ECE5;
+  --muted-foreground: #8A867F;     /* grey text */
+
+  /* Accent (icons, highlight) */
+  --accent: #E46A2B;               /* orange */
+  --accent-foreground: #FFF7EE;
+
+  /* Status */
+  --destructive: #DC2626;
+
+  /* Borders / form controls */
+  --border: #E5E3DF;
+  --input: #E5E3DF;
+  --ring: #2C7A41;
+
+  /* Charts (optional, still in palette) */
+  --chart-1: #2C7A41;  /* green */
+  --chart-2: #E46A2B;  /* orange */
+  --chart-3: #8A867F;  /* muted text */
+  --chart-4: #F18A4A;  /* lighter orange */
+  --chart-5: #A46A3A;  /* brown from logo */
+
+  /* Sidebar tokens */
+  --sidebar: #FAF8F4;
+  --sidebar-foreground: #3A342E;
+  --sidebar-primary: #2C7A41;
+  --sidebar-primary-foreground: #FDFBF7;
+  --sidebar-accent: #E46A2B;
+  --sidebar-accent-foreground: #FFF7EE;
+  --sidebar-border: #E5E3DF;
+  --sidebar-ring: #2C7A41;
+}
+
+.dark {
+  /* === DARK THEME – kontras tapi masih hangat === */
+
+  /* Base */
+  --background: #18130F;           /* very dark brown */
+  --foreground: #F7F4EF;           /* cream text */
+
+  /* Surfaces */
+  --card: #201912;
+  --card-foreground: #F7F4EF;
+  --popover: #201912;
+  --popover-foreground: #F7F4EF;
+
+  /* Brand */
+  --primary: #2C7A41;              /* tetap hijau brand */
+  --primary-foreground: #FDFBF7;
+
+  /* Secondary / muted surfaces */
+  --secondary: #272018;
+  --secondary-foreground: #F7F4EF;
+
+  --muted: #26201A;
+  --muted-foreground: #B0A89E;
+
+  /* Accent */
+  --accent: #E46A2B;
+  --accent-foreground: #FFF7EE;
+
+  /* Status */
+  --destructive: #F97373;
+
+  /* Borders / form controls */
+  --border: #F7F4EF1A;  /* ~10% */
+  --input: #F7F4EF26;   /* ~15% */
+  --ring: #2C7A41;
+
+  /* Charts */
+  --chart-1: #7BD68E;   /* lighter green for dark bg */
+  --chart-2: #F3A25C;
+  --chart-3: #C1B8AA;
+  --chart-4: #3D8550;
+  --chart-5: #F18A4A;
+
+  /* Sidebar */
+  --sidebar: #201912;
+  --sidebar-foreground: #F7F4EF;
+  --sidebar-primary: #2C7A41;
+  --sidebar-primary-foreground: #FDFBF7;
+  --sidebar-accent: #E46A2B;
+  --sidebar-accent-foreground: #FFF7EE;
+  --sidebar-border: #F7F4EF1A;
+  --sidebar-ring: #2C7A41;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
