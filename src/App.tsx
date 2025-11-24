@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { Home } from '@/pages/Home';
 import { Login } from '@/pages/Login';
 import { Dashboard } from '@/pages/Dashboard';
+import { FoodDetector } from '@/pages/FoodDetector';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/food-detector" element={<FoodDetector />} />
             <Route 
               path="/dashboard" 
               element={

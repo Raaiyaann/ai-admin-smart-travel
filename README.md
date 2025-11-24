@@ -20,6 +20,9 @@ Sebuah aplikasi web modern untuk mengelola dan mengorganisir knowledge base apli
   - Upload file (PDF, TXT, CSV, Excel) untuk diproses menjadi knowledge
   - Kelola file yang sudah diunggah: lihat detail, download, dan hapus
   - Tautan file (mis. Cloudinary) tersedia untuk pratinjau/unduh
+- Food Image Detection
+  - Halaman khusus "Kenali Rasa Suroboyo" untuk unggah foto makanan
+  - Kirim gambar ke backend Flask `/predict` dan tampilkan nama kuliner + confidence
 - System Prompt Manager
   - Buat, lihat, edit system prompt
   - Set aktif/default, reset ke default
@@ -31,6 +34,7 @@ Sebuah aplikasi web modern untuk mengelola dan mengorganisir knowledge base apli
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+
 - **React 19** - Library JavaScript untuk membangun UI
 - **TypeScript** - Superset JavaScript dengan type safety
 - **Vite** - Build tool yang cepat dan modern
@@ -58,7 +62,8 @@ src/
 ├── pages/
 │   ├── Home.tsx                # Halaman landing sederhana
 │   ├── Login.tsx               # Form login
-│   └── Dashboard.tsx           # Tab navigasi utama fitur
+│   ├── Dashboard.tsx           # Tab navigasi utama fitur
+│   └── FoodDetector.tsx        # Halaman upload gambar kuliner Surabaya
 ├── store/
 │   └── authSlice.ts            # State & aksi autentikasi (login, verify, CRUD user)
 ├── lib/
@@ -71,22 +76,26 @@ src/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (versi 18 atau lebih baru)
 - npm atau yarn
 
 ### Installation
 
 1. **Clone repository**
+
    ```bash
    git clone <repository-url> ./
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -114,11 +123,15 @@ npm run preview
 ## 🔧 Konfigurasi
 
 ### Environment Variables
+
 ```
 VITE_BACKEND_BASE_URL=http://localhost:7860
+VITE_FOOD_PREDICTOR_URL=http://localhost:5000
 ```
 
 ### API Integration
+
 Frontend berkomunikasi dengan backend RAG API yang berjalan di:
+
 - Development: `http://localhost:7860` ([FastAPI Backend](https://github.com/arifian853/rag-template-fastapi))
 - Production: Sesuaikan dengan deployment backend

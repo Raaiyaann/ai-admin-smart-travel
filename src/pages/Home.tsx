@@ -10,6 +10,10 @@ export const Home = () => {
     navigate('/login');
   };
 
+  const handleDetectorClick = () => {
+    navigate('/food-detector');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -32,14 +36,23 @@ export const Home = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center">
-                <Button 
-                  onClick={handleLoginClick}
-                  size="lg"
-                  className="w-full"
-                >
-                  <LogIn className="w-4 h-4 mr-2" />
-                  Login
-                </Button>
+                <div className="w-full space-y-3">
+                  <Button 
+                    onClick={handleLoginClick}
+                    size="lg"
+                    className="w-full"
+                  >
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Login
+                  </Button>
+                  <Button 
+                    onClick={handleDetectorClick}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Coba Food Detector
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
